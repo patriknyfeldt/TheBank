@@ -1,0 +1,187 @@
+@import 'partials/mixins';
+@import 'partials/variables';
+
+*{
+    font-family:Geneva, Tahoma, sans-serif;
+    margin:0;
+}
+.hide{
+    display:none;
+}
+body{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    .header{
+        @include flex(flex-start, center, row);
+        background: $blue;
+        height: 15%;
+        border-bottom: 1px solid $blue;
+        box-shadow: $blue 0px 1px 3px, $blue 0px 1px 3px;
+        h1{
+            margin-left: 5%;
+            text-align: center;
+            color: $light;
+        }
+    }
+    .main{
+        @include flex(initial, center, column);
+        width: 100%;
+        min-height: 74.7%;
+            .user-wrapper{
+                @include flex(center, center, column);
+                width: 100%;
+                .user-box{
+                    @include flex(space-evenly, center, row);
+                    color: $light;
+                    height: 70px;
+                    width: 100%;
+                    background: $blue;
+                }
+                .list-wrapper{
+                    align-self: flex-start;
+                    margin-left:20px;
+                    @include flex(center, flex-start, column);
+                    gap:10px;
+                    margin-bottom: 20px;
+                    h3{
+                        margin-top:10px;
+                    }
+                    .accounts-list{
+                        @include flex(center, center, column);
+                        gap:10px;
+                        list-style-type: none;
+                        .list-item{
+                            background: white;
+                            border-top: 1px solid $blue;
+                            .text-box{
+                                display:flex;
+                                gap:10px;
+                                p{
+                                    line-height: 25px;
+                                
+                                &.bold{
+                                    font-weight: bold;
+                                }
+                            }
+                            }
+                        }
+                    }
+                }
+            }
+            .popup-background{
+                @include flex(center, center, initial);
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                top: 0;
+                left:0;
+                height: 100vh;
+                width: 100vw;
+                
+                .popup-form{
+                    @include form(80%);
+                    a{
+                        @include flex(center, center, row);
+                        text-decoration:none;
+                        font-size: 13.33px;
+                        background: $blue;
+                    }
+                    // background: $blue;
+                    // width: 200px;
+                    // height: 200px;
+                    
+                }
+                &.hide{
+                    display:none;
+                }
+            }
+        
+        .form-wrapper{
+            @include flex(initial, center, column);
+            gap:30px;
+            width: 50%;
+            margin-top: 5%;
+            .form-links{
+                @include flex(space-evenly, center, row);
+                width: 100%;
+                a{
+                    @include flex(center, center, row);
+                    text-decoration: none;
+                    width: 120px;
+                    height: 30px;
+                    border: 1px solid $blue;
+                    border-radius: 2px;
+                    background: $blue;
+                    color:$light;
+                    box-shadow: $blue 0px 1px 3px, $blue 0px 1px 3px;
+                    &:hover{
+                        box-shadow: $blue 0px 2px 4px 0px inset;
+                    }
+                }
+            &.hide{
+                display:none;
+            }
+            }
+            .form{
+                @include form(100%);
+                // @include flex(center, center, column);
+                // gap:15px;
+                // border: 1px solid $blue;
+                // width: 100%;
+                // height: 300px;
+                // background-color: $blue;
+                // box-shadow: $blue 0px 1px 3px, $blue 0px 1px 3px;
+                // h2{
+                    
+                //     color: $light;
+                // }
+                // .input-box{
+                //     @include flex(initial, initial, column);
+                //     width: 80%;
+                //     .label{
+                //         color: $light;
+                //     }
+                //     .input{
+                //         height: 28px;
+                //         border-radius: 5px;
+                //         border:none;
+                //         font-size: 16px;
+                //         &:focus{
+                //             border: 1px solid $blue;
+                //             box-shadow: inset $blue 0px 1px 3px 0px,$blue 0px 0px 0px 1px;
+                //             outline:none;
+                //         }
+                //     }
+                // }
+                // &.hide{
+                //     display:none;
+                // }
+               
+            }
+        &.hide{
+            display:none;
+        }
+        }
+        .btn{
+            width: 120px;
+            height: 30px;
+            border: 1px solid $blue;
+            border-radius: 2px;
+            background: $blue;
+            color:$light;
+            box-shadow: $blue 0px 1px 3px, $blue 0px 1px 3px;
+            &:hover{
+                cursor: pointer;
+                box-shadow: $blue 0px 2px 4px 0px inset;
+            }
+            }
+
+    }
+    .footer{
+        width: 100%;
+       
+        bottom: 0;
+        height: 10%;
+        background: $blue;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>The Bank</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>The Bank</h1>
+    </header>
+    <main id="main" class="main">
+      <div class="user-wrapper" id="user-wrapper"></div>
+      <div class="form-wrapper" id="form-wrapper">
+        <div class="form-links" id="form-links">
+          <a href="http://localhost:3000?form=Login">Log in</a>
+          <a href="http://localhost:3000?form=Register">Register</a>
+        </div>
+        <form class="form hide" id="user-form">
+          <h2 id="user-form-heading"></h2>
+          <div class="input-box">
+            <label class="label" for="name-input">Username:</label>
+            <input class="input" type="text" id="name-input" required />
+          </div>
+          <div class="input-box">
+            <label class="label" for="password-input">Password:</label>
+            <input class="input" type="text" id="password-input" required />
+          </div>
+          <button id="user-form-btn" class="btn"></button>
+          <p class="error-msg" id="error-msg"></p>
+        </form>
+      </div>
+      <div class="popup-background hide" id="account-popup">
+        <form class="popup-form account-form" id="account-form">
+          <h2>Add account</h2>
+          <div class="input-box">
+            <label class="label" for="account-name">Account name</label>
+            <input class="input" type="text" id="account-name" required />
+          </div>
+          <div class="input-box">
+            <label class="label" for="account-balance">Account balance</label>
+            <input class="input" type="number" id="account-balance" required />
+          </div>
+          <button class="btn">Create account</button>
+          <button class="btn" onClick="toggleAccountPopup()">Cancel</button>
+        </form>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="js/requests.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/templates.js"></script>
+  </body>
+</html>
